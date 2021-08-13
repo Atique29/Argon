@@ -1,8 +1,8 @@
 # Argon
 A minimalistic football-fixture tracker app made with python tkinter
 
-This is a minimalistic application that helps you to keep track of your favourite
-teams next fixture, results and the state of the point table. Get an API key by 
+This application that helps you to keep track of your favourite teams next 
+fixture, results and the state of the point table. Get an API key by 
 registering at football-data.org and you're good to go.
 
 By default, the app will get data of Real Madrid CF at the start-up but you can 
