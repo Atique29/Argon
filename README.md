@@ -1,7 +1,7 @@
 # Argon
 A minimalistic football-fixture tracker app made with python tkinter
 
-This application that helps you to keep track of your favourite teams next 
+This application helps you to keep track of your favourite team's next 
 fixture, results and the state of the point table. Get an API key by 
 registering at football-data.org and you're good to go.
 
