@@ -2,7 +2,6 @@ import requests as req
 import json
 
 error_codes = {400:'The API key was probably malformed, delete the config.json file and restart the application with a valid API key',429:'yo,slow down!\ntoo many requests'}
-#key = 'a7716a05f3574d5a8f413c35354b5fd5'
 url1 = 'https://api.football-data.org/v2/'
 limit = '5'
 def fixtures(key,team_id):
