@@ -12,6 +12,7 @@ def fixtures(key,team_id):
         match = response.json()['matches'][0]
         data = {'mday':match['matchday'],'utc':match['utcDate'],
             'hteam':match['homeTeam']['name'],'ateam':match['awayTeam']['name']}
+#        print(data)
         return data
     except req.exceptions.ConnectionError:
         return "ERROR: Can't connect to the internet"
@@ -41,7 +42,7 @@ def results(key,team_id):
     data_all = []
     for i in range(int(limit)):
         homedata = (matches[i]['homeTeam']['name'],
-                matches[i]['score']['fullTime']['homeTeam']) 
+                matches[i]['score']['fullTime']['homeTeam'])
         awaydata = (matches[i]['awayTeam']['name'],
                 matches[i]['score']['fullTime']['awayTeam'])
         if matches[i]['score']['duration'] == 'PENALTY_SHOOTOUT':
@@ -50,5 +51,5 @@ def results(key,team_id):
             data_all.append((homedata,awaydata,pen_data))
         else:
             data_all.append((homedata,awaydata,''))
-            
-    return data_all 
+
+    return data_all
