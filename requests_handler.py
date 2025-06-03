@@ -41,15 +41,18 @@ def results(key,team_id):
     matches = response.json()['matches']
     data_all = []
     for i in range(int(limit)):
-        homedata = (matches[i]['homeTeam']['name'],
-                matches[i]['score']['fullTime']['homeTeam'])
-        awaydata = (matches[i]['awayTeam']['name'],
-                matches[i]['score']['fullTime']['awayTeam'])
-        if matches[i]['score']['duration'] == 'PENALTY_SHOOTOUT':
-            pen_data = ('['+str(matches[i]['score']['penalties']['homeTeam'])+':'+
-                    str(matches[i]['score']['penalties']['awayTeam'])+']')
-            data_all.append((homedata,awaydata,pen_data))
-        else:
-            data_all.append((homedata,awaydata,''))
-
+        try:
+            homedata = (matches[i]['homeTeam']['name'],
+                    matches[i]['score']['fullTime']['homeTeam'])
+            awaydata = (matches[i]['awayTeam']['name'],
+                    matches[i]['score']['fullTime']['awayTeam'])
+            if matches[i]['score']['duration'] == 'PENALTY_SHOOTOUT':
+                pen_data = ('['+str(matches[i]['score']['penalties']['homeTeam'])+':'+
+                        str(matches[i]['score']['penalties']['awayTeam'])+']')
+                data_all.append((homedata,awaydata,pen_data))
+            else:
+                data_all.append((homedata,awaydata,''))
+        #if theres less than 5 matches played in the season
+        except IndexError:
+            break
     return data_all

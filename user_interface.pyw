@@ -27,7 +27,7 @@ def dat_format(utc):
     else:
         loc_time = str(loc_hr)+':'+utctime[3:]
     text = ('starts on '+day+' '+mth_mappings[int(mth)]+','+' at'+' '+loc_time+
-            ' '+'localTime')
+            ' '+'utc+6')
     return text
 
 def stan_format(key,league_id,canvas):
@@ -123,9 +123,9 @@ def main_window(label=False,img_path=None):
     wt,ht = 450,150
     root = tk.Tk()
     root.resizable(False,False)
-    root.title('argon')
+    root.title(' Argon')
 #    root.geometry('-5+5')
-    root.geometry('-300+100')
+    root.geometry('-800+400')
 #    root.iconbitmap('./graphix/isthatit.ico')
     canvas = tk.Canvas(root,height=ht,width=wt)
     canvas.pack()

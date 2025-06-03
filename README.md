@@ -18,4 +18,4 @@ Write just Bayern or FC Bayern München, not FC Bayern Munchen.
 
 If you get stuck with the team_name issue, check out the team_codes.json file.
 
-![interface](./graphix/ui.jpg)
+![UI](./graphix/ui.jpg)
