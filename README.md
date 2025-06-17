@@ -1,5 +1,5 @@
 # Argon
-A minimalistic football app with python tkinter
+A minimalistic football app built with python tkinter
 
 This application helps you to keep track of your favourite team's next
 fixture, results and the state of the point table. Get an API key by
