@@ -2,8 +2,8 @@ import requests as req
 import json
 
 error_codes = {400:'The API key was probably malformed, delete the config.json file and restart the application with a valid API key',429:'yo,slow down!\ntoo many requests'}
-url1 = 'https://api.football-data.org/v2/'
-limit = '5'
+url1 = 'https://api.football-data.org/v4/'
+limit = '4'
 def fixtures(key,team_id):
     url = url1+'teams/'+str(team_id)+'/matches?status=SCHEDULED'
     headers = {'X-Auth-Token':key}
@@ -43,9 +43,9 @@ def results(key,team_id):
     for i in range(int(limit)):
         try:
             homedata = (matches[i]['homeTeam']['name'],
-                    matches[i]['score']['fullTime']['homeTeam'])
+                    matches[i]['score']['fullTime']['home'])
             awaydata = (matches[i]['awayTeam']['name'],
-                    matches[i]['score']['fullTime']['awayTeam'])
+                    matches[i]['score']['fullTime']['away'])
             if matches[i]['score']['duration'] == 'PENALTY_SHOOTOUT':
                 pen_data = ('['+str(matches[i]['score']['penalties']['homeTeam'])+':'+
                         str(matches[i]['score']['penalties']['awayTeam'])+']')
