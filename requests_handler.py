@@ -3,7 +3,7 @@ import json
 
 error_codes = {400:'The API key was probably malformed, delete the config.json file and restart the application with a valid API key',429:'yo,slow down!\ntoo many requests'}
 url1 = 'https://api.football-data.org/v4/'
-limit = '4'
+limit = '5'
 def fixtures(key,team_id):
     url = url1+'teams/'+str(team_id)+'/matches?status=SCHEDULED'
     headers = {'X-Auth-Token':key}
